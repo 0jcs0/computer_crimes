@@ -1,0 +1,1856 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/julio/ontologies/2024/2/delitos_informaticos_rdf#"
+     xml:base="http://www.semanticweb.org/julio/ontologies/2024/2/delitos_informaticos_rdf"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontologia="http://www.delitosinformaticos.org/ontologia#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/julio/ontologies/2024/2/delitos_informaticos_rdf">
+        <rdfs:comment>Ontologia de Delitos Informáticos</rdfs:comment>
+        <rdfs:comment>Ontologia Desenvolvida pelo discente Julio Cesar  em sua Dissertação de Mestrado defendido em 07/02/2024 às 09h - Defesa n. 288 - Universidade de Pernambuco / Programa de Pós-graduação em Engenharia da Computação - PPGEC
+
+Titulo: Desenvolvimento de uma Ontologia para abordar técnica de Phishing em Delitos Informáticos uma contribuição à Segurança Pública
+
+Banca Examinadora: 
+Orientador: Professor Dr.º Sidney Lopes
+Examinadora externa Professora Dr.ª Paloma Saldanha
+Examinador interno Professor Dr.º Cleiton Rodrigues
+
+Objetivo:
+Uma Ontologia para Arquitetura de Sistemas Multagentes e uma Ontologia para Delitos Informáticos. Devem funcionar de forma integrada, sendo a primeira a Formalização de uma arquitetura tendo como público alvo a área de engenharia de software e a segunda a classificação de Delitos Informáticos, servindo como um esquema de regra para troca de mensagens entre os agentes da primeira, como também domínio de conhecimento de como são tratados os Delitos Informáticos
+na Estrutura Judiciária brasileira. Destaca-se, ainda, que a Ontologia de Delitos Informáticos, embora esteja preparada para qualquer técnica de ataque, focará apenas na técnica de ataque de Phishing.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#temLegislação -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#temLegislação">
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#FraudeEletronica"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#usaTecnica -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#usaTecnica">
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#InvasaoPrivacidade"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#CyberStalking"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#éClassificadoComo -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#éClassificadoComo">
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Impuro"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Puro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#éExploradaPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#éExploradaPor">
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Humana"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#éInvestigadoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#éInvestigadoPor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Spear_Phishing"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Polícia_Civil"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Polícia_Federal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#éJulgadoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#éJulgadoPor">
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#éTipificadoComo -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#éTipificadoComo">
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#FraudeEletronica"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Art171§2A"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#éTipificadoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#éTipificadoPor"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#éVariacaoDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.delitosinformaticos.org/ontologia#éVariacaoDe">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#EvilTwin"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Pharming"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#SearchEnginePhishing"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Smishing"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Spear_Phishing"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Tabnabbing"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Vishing"/>
+        <rdfs:domain rdf:resource="http://www.delitosinformaticos.org/ontologia#Whaling"/>
+        <rdfs:range rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#temIpProvedorServicoVitima -->
+
+    <owl:DatatypeProperty rdf:about="http://www.delitosinformaticos.org/ontologia#temIpProvedorServicoVitima"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#temNomeAppAfetado -->
+
+    <owl:DatatypeProperty rdf:about="http://www.delitosinformaticos.org/ontologia#temNomeAppAfetado"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#temNumeroImei -->
+
+    <owl:DatatypeProperty rdf:about="http://www.delitosinformaticos.org/ontologia#temNumeroImei">
+        <rdfs:comment>O IMEI, International Mobile Equipment Identity ou Identificação Internacional de Equipamento Móvel, em português, é um número composto normalmente por 15 dígitos - são únicos e globais -, que permitem a identificação do seu celular. É como um documento de identidade para seu dispositivo móvel.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#temNumeroTelefoneVitima -->
+
+    <owl:DatatypeProperty rdf:about="http://www.delitosinformaticos.org/ontologia#temNumeroTelefoneVitima"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#temTecnicaAtaque -->
+
+    <owl:DatatypeProperty rdf:about="http://www.delitosinformaticos.org/ontologia#temTecnicaAtaque"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#temUrlMaliciosa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.delitosinformaticos.org/ontologia#temUrlMaliciosa"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Adware -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Adware">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Backdoors"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Botnet"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Keylogger"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Ransomware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Rootkit"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Backdoors -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Backdoors">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Botnet"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Keylogger"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Ransomware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Rootkit"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Baiting -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Baiting">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Botnet -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Botnet">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Keylogger"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Ransomware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Rootkit"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Broken_Authentication -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Broken_Authentication">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Cross_Site_Request_Forgery_CSRF"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Cross_Site_Scripting_XSS"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insecure_Deserialization"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#SQL_Injection"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Configuração_Inadequada -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Configuração_Inadequada">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#CyberStalking"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#EvilTwin"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sniffing"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Conscientizacao -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Conscientizacao">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#PrevencaoProtecao"/>
+        <rdfs:comment>Educação e Conscientização dos cidadãos</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Cross_Site_Request_Forgery_CSRF -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Cross_Site_Request_Forgery_CSRF">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Cross_Site_Scripting_XSS"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insecure_Deserialization"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#SQL_Injection"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Cross_Site_Scripting_XSS -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Cross_Site_Scripting_XSS">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insecure_Deserialization"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#SQL_Injection"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#CyberStalking -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#CyberStalking">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#EvilTwin"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sniffing"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+        <rdfs:comment>Ataques de Rede: Se o CyberStalking envolve monitoramento, interceptação ou manipulação de comunicações online da vítima, ele pode ser classificado como um ataque de rede. Isso inclui atividades como espionagem de tráfego de rede, acesso não autorizado a emails ou contas de mídia social.
+
+Ataques a Aplicações Web: Se o CyberStalking ocorre principalmente através de plataformas online, como redes sociais, fóruns ou email, ele pode ser considerado um ataque a aplicações web. Isso se refere a casos em que os agressores usam essas plataformas para perseguir, assediar ou intimidar suas vítimas.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Código_Penal -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Código_Penal">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+        <rdfs:comment>Código Penal
+DECRETO-LEI No 2.848, DE 7 DE DEZEMBRO DE 1940</rdfs:comment>
+        <rdfs:label>Del2848_1940</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#DelitoInformatico -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#DelitoInformatico">
+        <rdfs:comment>Delito informático é a conduta típica, antijurídica e cumpável cometida através de recursos informáticos contra vens jurídicos comuns e/ou cometida em face de bem jurídico informático, atingindo ou buscando atingir a esfera da segurança informática em seus elementos confidencialidade, integrirdade e dsponibilidade.
+Fonte: 
+SYSDOW, S. T. Curso de Direito Penal Informático. 2ª edição. ed. [S.l.]: Brasil:
+JusPodivm, 2021. 268 p</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#EvilTwin -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#EvilTwin">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sniffing"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Firewall -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Firewall">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#MedidasTecnologicas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#FormaCometimentoDelito -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#FormaCometimentoDelito"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#FraudeEletronica -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#FraudeEletronica">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Humana -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Humana">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Impersonation -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Impersonation">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Improprio -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Improprio">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#FormaCometimentoDelito"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Impuro -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Impuro">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Proprio"/>
+        <rdfs:comment>Impuros (ou indiretos)
+É aquele que visa atingir bem jurídico diverso do informático como a honra, o patrimônio ou a diagnidade sexual.
+Fonte: 
+SYSDOW, S. T. Curso de Direito Penal Informático. 2ª edição. ed. [S.l.]: Brasil:
+JusPodivm, 2021. 269-273 p</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Insecure_Deserialization -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Insecure_Deserialization">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#SQL_Injection"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Internacionais -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Internacionais">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Organizacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Internacional -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Internacional">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#InvasaoPrivacidade -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#InvasaoPrivacidade">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFAL -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFAL">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFES"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFMG"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFMS"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRJ"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFCE -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFCE">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFES"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFMG"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFMS"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRJ"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFES -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFES">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFMG"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFMS"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFPB"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFPE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRN"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFMG -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFMG">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFMS"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFPB"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFPE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRJ"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRN"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFMS -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFMS">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFPB"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFPE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRJ"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRN"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFPB -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFPB">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRJ"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFPE -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFPE">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRJ"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFRJ -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFRJ">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFRN"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFRN -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFRN">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSC"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFSC -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFSC">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFSE -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFSE">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#JFSP"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#JFSP -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#JFSP">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Keylogger -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Keylogger">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Ransomware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Rootkit"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#L12737_2012 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#L12737_2012">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#L13709_2018_LGPD"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#L14155_2021"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#L12965_2014 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#L12965_2014">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+        <rdfs:comment>Marco Civil da Internet
+LEI Nº 12.965, DE 23 DE ABRIL DE 2014
+Estabelece princípios, garantias, direitos e deveres para o uso da Internet no Brasil.</rdfs:comment>
+        <rdfs:label>L12965_2014</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#L13709_2018_LGPD -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#L13709_2018_LGPD">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#L14155_2021"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#L14155_2021 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#L14155_2021">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Legislacao -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sniffing"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#MedidasTecnologicas -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#MedidasTecnologicas">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#PrevencaoProtecao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Nacionais -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Nacionais">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Organizacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Nacional -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Nacional">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Organizacoes -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Organizacoes"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Pharming -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Pharming">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Phishing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Phishing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#PiratariaSoftware -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#PiratariaSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#PropriedadeIntelectual"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Polícia_Civil -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Polícia_Civil">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacionais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Polícia_Federal -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Polícia_Federal">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacionais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Pretexting -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Pretexting">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#PrevencaoProtecao -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#PrevencaoProtecao"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#PropriedadeIntelectual -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#PropriedadeIntelectual">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Proprio -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Proprio">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#FormaCometimentoDelito"/>
+        <rdfs:comment>Exige necessariamente e obrigatoriamente o uso de um meio informático para seu comentimento.
+Fonte: 
+SYSDOW, S. T. Curso de Direito Penal Informático. 2ª edição. ed. [S.l.]: Brasil:
+JusPodivm, 2021. 269-273 p</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sniffing"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Puro -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Puro">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Proprio"/>
+        <rdfs:comment>Puros (ou diretos)
+É aquele em que o objetivo da conduta e do agente é o de atingir necessariamente o bem jurídico informático, ou seja, a segurança.
+Fonte: 
+SYSDOW, S. T. Curso de Direito Penal Informático. 2ª edição. ed. [S.l.]: Brasil:
+JusPodivm, 2021. 269-273 p</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Quid_Pro_Quo -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Quid_Pro_Quo">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Ransomware -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Ransomware">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Rootkit"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Rede -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Rede">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+        <rdfs:comment>DoS (Denial of Service): Sobrecarrega um sistema para torná-lo inacessível.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Rootkit -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Rootkit">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#SQL_Injection -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#SQL_Injection">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#SearchEnginePhishing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#SearchEnginePhishing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Smishing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Smishing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+        <rdfs:comment>O uso de mensagens de texto (SMS) para realizar ataques de phishing.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Sniffing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Sniffing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Software -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Software">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Spear_Phishing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Spear_Phishing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Spoofing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Spoofing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Spyware -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Spyware">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJAL -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJAL">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJBA -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJBA">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJCE -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJCE">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJMA -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJMA">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJPB -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJPB">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJPE -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJPE">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJPI -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJPI">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJRN -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJRN">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TJSE -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TJSE">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TRF1 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TRF1">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TRF2 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TRF2">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TRF3 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TRF3">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TRF4 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TRF4">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TRF5 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TRF5">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TRF6 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TRF6">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Tabnabbing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Tabnabbing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Tailgating -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Tailgating">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TecnicaAtaque -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueRede">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Tribunais_Estaduais">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacionais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Tribunais_Regionais_Federais">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacionais"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Trojan_Horse -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Trojan_Horse">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#ViolacaoDireitosAutorais -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#ViolacaoDireitosAutorais">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#PropriedadeIntelectual"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Vishing -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Vishing">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Vulnerabilidade -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Vírus -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Vírus">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Worm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Whaling -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Whaling">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Worm -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Worm">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueSoftwareMalicioso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+        <owl:disjointWith rdf:resource="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art13§2 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Art13§2">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#L12965_2014"/>
+        <rdfs:comment>Art. 13. Na provisão de conexão à internet, cabe ao administrador de sistema autônomo respectivo o dever de manter os registros de conexão, sob sigilo, em ambiente controlado e de segurança, pelo prazo de 1 (um) ano, nos termos do regulamento.
+§ 2º A autoridade policial ou administrativa ou o Ministério Público poderá requerer cautelarmente que os registros de conexão sejam guardados por prazo superior ao previsto no caput</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art15§2 -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Art15§2">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#L12965_2014"/>
+        <rdfs:comment>Art. 15. O provedor de aplicações de internet constituído na forma de pessoa jurídica e que exerça essa atividade de forma organizada, profissionalmente e com fins econômicos deverá manter os respectivos registros de acesso a aplicações de internet, sob sigilo, em ambiente controlado e de segurança, pelo prazo de 6 (seis) meses, nos termos do regulamento.
+§ 2º A autoridade policial ou administrativa ou o Ministério Público poderão requerer cautelarmente a qualquer provedor de aplicações de internet que os registros de acesso a aplicações de internet sejam guardados, inclusive por prazo superior ao previsto no caput, observado o disposto nos §§ 3º e 4º do art. 13.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art171§2A -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Art171§2A">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring -->
+
+    <owl:Class rdf:about="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring">
+        <rdfs:subClassOf rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueAplicacaoWeb"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._138_-_crimes_contra_a_honra -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._138_-_crimes_contra_a_honra">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._139_-_crimes_contra_a_honra -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._139_-_crimes_contra_a_honra">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._140_-_crimes_contra_a_honra -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._140_-_crimes_contra_a_honra">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._147_-_crime_de_ameaça -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._147_-_crime_de_ameaça">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._154-A_-_invasão_de_dispositivo_informático -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._154-A_-_invasão_de_dispositivo_informático">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._155_-_furto -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._155_-_furto">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._158_-_extorsão -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._158_-_extorsão">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._160_-_extorsão_Indireta -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._160_-_extorsão_Indireta">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._168_-_apropriação_indébita -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._168_-_apropriação_indébita">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._171_-_estelionato -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._171_-_estelionato">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._184_-_violação_de_direito_autoral -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._184_-_violação_de_direito_autoral">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._208_-_escárnio_por_motivo_de_religião -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._208_-_escárnio_por_motivo_de_religião">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._228_-_favorecimento_da_prostituição -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._228_-_favorecimento_da_prostituição">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._233_-_ato_obsceno -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._233_-_ato_obsceno">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._234_-_escrito_ou_objeto_obsceno -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._234_-_escrito_ou_objeto_obsceno">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._286_-_incitação_ao_crime -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._286_-_incitação_ao_crime">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._287_-_apologia_de_crime_ou_criminoso -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._287_-_apologia_de_crime_ou_criminoso">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#crimepuro1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#crimepuro1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#FormaCometimentoDelito"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Impuro"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Proprio"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Puro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#pharming1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#pharming1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Humana"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Pharming"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Smishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Spear_Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+        <owl:sameAs rdf:resource="http://www.delitosinformaticos.org/ontologia#phishing1"/>
+        <ontologia:éClassificadoComo rdf:resource="http://www.delitosinformaticos.org/ontologia#crimepuro1"/>
+        <ontologia:éExploradaPor rdf:resource="http://www.delitosinformaticos.org/ontologia#vulnerabilidadehumana1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaCivil1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaFederal1"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_estelionato"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2A"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2B"/>
+        <ontologia:temIpProvedorServicoVitima>148.155.22.133</ontologia:temIpProvedorServicoVitima>
+        <ontologia:temNomeAppAfetado>Whatsapp</ontologia:temNomeAppAfetado>
+        <ontologia:temNumeroImei>142.555.123.124</ontologia:temNumeroImei>
+        <ontologia:temNumeroTelefoneVitima>8199999999</ontologia:temNumeroTelefoneVitima>
+        <ontologia:temUrlMaliciosa>http://www.teste.com.br</ontologia:temUrlMaliciosa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#phishing1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#phishing1"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#phishing1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#phishing1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Humana"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Pharming"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Smishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Spear_Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+        <owl:sameAs rdf:resource="http://www.delitosinformaticos.org/ontologia#phishing2"/>
+        <owl:sameAs rdf:resource="http://www.delitosinformaticos.org/ontologia#smishing1"/>
+        <owl:sameAs rdf:resource="http://www.delitosinformaticos.org/ontologia#vishing1"/>
+        <ontologia:éClassificadoComo rdf:resource="http://www.delitosinformaticos.org/ontologia#crimepuro1"/>
+        <ontologia:éExploradaPor rdf:resource="http://www.delitosinformaticos.org/ontologia#vulnerabilidadehumana1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaCivil1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaFederal1"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_estelionato"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2A"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2B"/>
+        <ontologia:temIpProvedorServicoVitima>148.155.22.133</ontologia:temIpProvedorServicoVitima>
+        <ontologia:temNomeAppAfetado>Whatsapp</ontologia:temNomeAppAfetado>
+        <ontologia:temNumeroImei>142.555.123.124</ontologia:temNumeroImei>
+        <ontologia:temNumeroTelefoneVitima>8199999999</ontologia:temNumeroTelefoneVitima>
+        <ontologia:temUrlMaliciosa>http://www.teste.com.br</ontologia:temUrlMaliciosa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#phishing2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#phishing2"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#smishing1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#smishing1"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#vishing1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#vishing1"/>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#phishing2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#phishing2">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Humana"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Pharming"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Smishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Spear_Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+        <ontologia:éClassificadoComo rdf:resource="http://www.delitosinformaticos.org/ontologia#crimepuro1"/>
+        <ontologia:éExploradaPor rdf:resource="http://www.delitosinformaticos.org/ontologia#vulnerabilidadehumana1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaCivil1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaFederal1"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_estelionato"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2A"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2B"/>
+        <ontologia:temIpProvedorServicoVitima>148.155.22.133</ontologia:temIpProvedorServicoVitima>
+        <ontologia:temNomeAppAfetado>Whatsapp</ontologia:temNomeAppAfetado>
+        <ontologia:temNumeroImei>142.555.123.124</ontologia:temNumeroImei>
+        <ontologia:temNumeroTelefoneVitima>8199999999</ontologia:temNumeroTelefoneVitima>
+        <ontologia:temUrlMaliciosa>http://www.teste.com.br</ontologia:temUrlMaliciosa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#policiaCivil1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#policiaCivil1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacionais"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Organizacoes"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Polícia_Civil"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Polícia_Federal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#policiaFederal1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#policiaFederal1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacionais"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Organizacoes"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Polícia_Civil"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Polícia_Federal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#pr1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#pr1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Pretexting"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#smishing1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#smishing1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Humana"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Pharming"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Smishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Spear_Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+        <ontologia:éClassificadoComo rdf:resource="http://www.delitosinformaticos.org/ontologia#crimepuro1"/>
+        <ontologia:éExploradaPor rdf:resource="http://www.delitosinformaticos.org/ontologia#vulnerabilidadehumana1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaCivil1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaFederal1"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_estelionato"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2A"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2B"/>
+        <ontologia:temIpProvedorServicoVitima>148.155.22.133</ontologia:temIpProvedorServicoVitima>
+        <ontologia:temNomeAppAfetado>Whatsapp</ontologia:temNomeAppAfetado>
+        <ontologia:temNumeroImei>142.555.123.124</ontologia:temNumeroImei>
+        <ontologia:temNumeroTelefoneVitima>8199999999</ontologia:temNumeroTelefoneVitima>
+        <ontologia:temUrlMaliciosa>http://www.teste.com.br</ontologia:temUrlMaliciosa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#vishing1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#vishing1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#DelitoInformatico"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Humana"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Pharming"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Smishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Spear_Phishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vishing"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+        <ontologia:éClassificadoComo rdf:resource="http://www.delitosinformaticos.org/ontologia#crimepuro1"/>
+        <ontologia:éExploradaPor rdf:resource="http://www.delitosinformaticos.org/ontologia#vulnerabilidadehumana1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaCivil1"/>
+        <ontologia:éInvestigadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#policiaFederal1"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_estelionato"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2A"/>
+        <ontologia:éTipificadoPor rdf:resource="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2B"/>
+        <ontologia:temIpProvedorServicoVitima>148.155.22.133</ontologia:temIpProvedorServicoVitima>
+        <ontologia:temNomeAppAfetado>Whatsapp</ontologia:temNomeAppAfetado>
+        <ontologia:temNumeroImei>142.555.123.124</ontologia:temNumeroImei>
+        <ontologia:temNumeroTelefoneVitima>8199999999</ontologia:temNumeroTelefoneVitima>
+        <ontologia:temUrlMaliciosa>http://www.teste.com.br</ontologia:temUrlMaliciosa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#vulnerabilidadehumana1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#vulnerabilidadehumana1">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Humana"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaque"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#TecnicaAtaqueEngenhosidadeSocial"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Vulnerabilidade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._171_-_§2A -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2A">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.delitosinformaticos.org/ontologia#Art._171_-_§2B -->
+
+    <owl:NamedIndividual rdf:about="http://www.delitosinformaticos.org/ontologia#Art._171_-_§2B">
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Código_Penal"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Legislacao"/>
+        <rdf:type rdf:resource="http://www.delitosinformaticos.org/ontologia#Nacional"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.delitosinformaticos.org/ontologia#temTecnicaAtaque"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Adware"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Backdoors"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Botnet"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Keylogger"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Ransomware"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Rootkit"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Spyware"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Trojan_Horse"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Vírus"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Worm"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Broken_Authentication"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Cross_Site_Request_Forgery_CSRF"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Cross_Site_Scripting_XSS"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Insecure_Deserialization"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#SQL_Injection"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Security_Misconfiguration"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Sensitive_Data_Exposure"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Using_Components_with_Known_Vulnerabilities"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#XML_External_Entities_XXE"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Insufficient_Logging_&amp;_Monitoring"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Configuração_Inadequada"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#CyberStalking"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#EvilTwin"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Sniffing"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Configuração_Inadequada"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#EvilTwin"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Man-in-the-Middle"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Protocolos_Não_Seguros"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Sniffing"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#Spoofing"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#L12737_2012"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#L13709_2018_LGPD"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#L14155_2021"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#TRF1"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#TRF2"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#TRF3"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#TRF4"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#TRF5"/>
+            <rdf:Description rdf:about="http://www.delitosinformaticos.org/ontologia#TRF6"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
